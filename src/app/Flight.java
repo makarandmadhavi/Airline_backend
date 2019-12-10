@@ -30,7 +30,6 @@ public class Flight {
         Statement stmt = null;
         ResultSet rs = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
             con = Conn.getConnection();
             stmt = con.createStatement();
             rs = stmt.executeQuery("select * from flight WHERE flight_id = " + id);
@@ -66,7 +65,6 @@ public class Flight {
     //BE SURE TO SET ALL VALUES BEFORE YOU FIRE THIS FUNCTION using constructor or accessing object values individually
     public void addNewFlight() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
             Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("insert into Flight values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
@@ -92,7 +90,7 @@ public class Flight {
     //Donot fire unless you are sure of changes. 
     public void updateFlight() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            
             Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("UPDATE flight set eco_cost = ?, eco_avail = ?, first_cost = ?, first_avail = ?, business_cost = ?, business_avail = ? WHERE flight_id = "+this.id);
 

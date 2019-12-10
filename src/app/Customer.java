@@ -20,7 +20,7 @@ public class Customer {
         Statement stmt = null; 
         ResultSet rs = null;
         try { 
-            Class.forName("com.mysql.jdbc.Driver");
+            
             con = Conn.getConnection();
             stmt = con.createStatement();
             rs = stmt.executeQuery("select * from Customer WHERE cust_username = '"+username+"'");
@@ -50,7 +50,6 @@ public class Customer {
     //BE SURE TO SET ALL VALUES BEFORE YOU FIRE THIS FUNCTION using constructor or accessing object values individually
     public void addNewCustomer() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
             Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("insert into customer values (?, ?, ?, ?, ?)");
 
@@ -71,7 +70,6 @@ public class Customer {
     //Donot fire unless logged in.
     public void updateCustomer() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
             Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("UPDATE customer set name = ?, address = ?, phone = ?, email = ? WHERE cust_username = ?");
 
