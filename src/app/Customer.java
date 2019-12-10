@@ -19,10 +19,9 @@ public class Customer {
         Connection con = null; 
         Statement stmt = null; 
         ResultSet rs = null;
-        System.out.println("Hello");
         try { 
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_project", "root", "");
+            con = Conn.getConnection();
             stmt = con.createStatement();
             rs = stmt.executeQuery("select * from Customer WHERE cust_username = '"+username+"'");
            if(rs.next()) {
@@ -52,7 +51,7 @@ public class Customer {
     public void addNewCustomer() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_project", "root", "");
+            Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("insert into customer values (?, ?, ?, ?, ?)");
 
             stat.setString(1, username);
@@ -73,7 +72,7 @@ public class Customer {
     public void updateCustomer() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_project", "root", "");
+            Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("UPDATE customer set name = ?, address = ?, phone = ?, email = ? WHERE cust_username = ?");
 
             stat.setString(5, username);
