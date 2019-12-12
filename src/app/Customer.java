@@ -49,6 +49,7 @@ public class Customer {
     // To add a new customer to the database, will take object values for updation,
     //BE SURE TO SET ALL VALUES BEFORE YOU FIRE THIS FUNCTION using constructor or accessing object values individually
     public void addNewCustomer() {
+        
         try {
             Connection con = Conn.getConnection();
             PreparedStatement stat = con.prepareStatement("insert into customer values (?, ?, ?, ?, ?)");

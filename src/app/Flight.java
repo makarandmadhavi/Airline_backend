@@ -45,16 +45,16 @@ public class Flight {
                 this.business_avail = rs.getInt(9);
                 this.time = rs.getString(10);
                 
-                System.out.println(this.id);
-                System.out.println(this.source);
-                System.out.println(this.destination);
-                System.out.println(this.eco_cost);
-                System.out.println(this.eco_avail);
-                System.out.println(this.first_cost);
-                System.out.println(this.first_avail);
-                System.out.println(this.business_cost);
-                System.out.println(this.business_avail);
-                System.out.println(this.time);
+                // System.out.println(this.id);
+                // System.out.println(this.source);
+                // System.out.println(this.destination);
+                // System.out.println(this.eco_cost);
+                // System.out.println(this.eco_avail);
+                // System.out.println(this.first_cost);
+                // System.out.println(this.first_avail);
+                // System.out.println(this.business_cost);
+                // System.out.println(this.business_avail);
+                // System.out.println(this.time);
             }
             con.close();
         } catch (Exception e) {
